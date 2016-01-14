@@ -22,10 +22,7 @@ namespace NorthwindApp.DataAccess
 
 		public OrderRepository()
 		{
-            BloggingModel dbcontext = new BloggingModel();
-
             dbContext2 = new NorthwindModelEntities();
-
 		}
 
 		public Domain.Model.Order GetByID(int id)

@@ -102,29 +102,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Blog.cs">
-      <DependentUpon>BloggingModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="BloggingModel.Context.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>BloggingModel.Context.tt</DependentUpon>
-    </Compile>
-    <Compile Include="BloggingModel.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>BloggingModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="BloggingModel.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>BloggingModel.edmx</DependentUpon>
-    </Compile>
     <Compile Include="OrderRepository.cs" />
     <Compile Include="IOrderRepository.cs" />
-    <Compile Include="Post.cs">
-      <DependentUpon>BloggingModel.tt</DependentUpon>
-    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Settings.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -140,13 +119,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
-    <EntityDeploy Include="BloggingModel.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>BloggingModel.Designer.cs</LastGenOutput>
-    </EntityDeploy>
-    <None Include="BloggingModel.edmx.diagram">
-      <DependentUpon>BloggingModel.edmx</DependentUpon>
-    </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -169,18 +141,6 @@
       <ProductName>SQL Server Compact 4.0 SP1</ProductName>
       <Install>true</Install>
     </BootstrapperPackage>
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="BloggingModel.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>BloggingModel.edmx</DependentUpon>
-      <LastGenOutput>BloggingModel.Context.cs</LastGenOutput>
-    </Content>
-    <Content Include="BloggingModel.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>BloggingModel.edmx</DependentUpon>
-      <LastGenOutput>BloggingModel.cs</LastGenOutput>
-    </Content>
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
