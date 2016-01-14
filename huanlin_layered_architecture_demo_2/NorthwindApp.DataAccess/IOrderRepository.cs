@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-using NorthwindApp.Domain;
+using NorthwindApp.Domain.Model;
  
 namespace NorthwindApp.DataAccess
 {
@@ -12,7 +12,7 @@ namespace NorthwindApp.DataAccess
     {
         Order GetByID(int id);
         IEnumerable<Order> GetAll();
-        void Insert();
+        void Insert(Order newOrder);
         void Delete();
         void Update();
         void Save();

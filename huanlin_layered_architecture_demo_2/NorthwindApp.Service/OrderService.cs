@@ -5,22 +5,25 @@ using System.Text;
 using System.Threading.Tasks;
 
 using NorthwindApp.Domain;
-using NorthwindApp.DataAccess;
+using NorthwindApp.Domain.Model;
+using NorthwindApp.BusinessLogic;
  
 namespace NorthwindApp.Service
 {
 	public class OrderService
 	{
-		private IOrderRepository orderRepository;
+        private OrderManager orderManager;
 
 		public OrderService()
 		{
-			orderRepository = new OrderRepository();
+            orderManager = new OrderManager();
+            Order newOrder = new Order(1);
+            orderManager.Insert(newOrder);
 		}
 
 		public Order GetByID(int id)
 		{
-			return orderRepository.GetByID(id);
+            return orderManager.GetByID(id);
 		}
 
 		public IEnumerable<Order> GetAll()

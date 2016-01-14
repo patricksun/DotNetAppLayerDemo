@@ -10,46 +10,39 @@ using Microsoft.Practices.Unity;
 
 using System.Data.Entity;
 
+using NorthwindApp.Domain.Model;
 
 namespace NorthwindApp.DataAccess
 {
 	public class OrderRepository : IOrderRepository
 	{
         private Microsoft.Practices.EnterpriseLibrary.Data.Database database;
-        private DbContext dbcontext;
+//        private DbContext dbcontext;
+        private NorthwindModelEntities dbContext2;
 
 		public OrderRepository()
 		{
-
-            database = new Microsoft.Practices.EnterpriseLibrary.Data.Sql.SqlDatabase("BloggingModel");
             BloggingModel dbcontext = new BloggingModel();
-            DbSet<Blog> aaa = dbcontext.Blogs;
-            
+
+            dbContext2 = new NorthwindModelEntities();
+
 		}
 
-		public Domain.Order GetByID(int id)
+		public Domain.Model.Order GetByID(int id)
 		{
-
-//			string sql = String.Format("select * from Blogs where BlogId={0}", id);
-            string sql = String.Format("select * from Posts");
-            IDataReader rdr = database.ExecuteReader(CommandType.Text, sql);
-            if (rdr.Read())
-			{
-				IRowMapper<Domain.Order> mapper = MapBuilder<Domain.Order>.BuildAllProperties();
-				Domain.Order order = mapper.MapRow(rdr);
-				return order;
-			}
-			return null;
+            DbSet<Order> orders = dbContext2.Orders;
+            var findOrder = orders.Find(1);
+            return findOrder;
 		}
 
-		public IEnumerable<Domain.Order> GetAll()
+        public IEnumerable<Domain.Model.Order> GetAll()
 		{
 			throw new NotImplementedException();
 		}
 
-		public void Insert()
+		public void Insert(Order newOrder)
 		{
-			throw new NotImplementedException();
+            dbContext2.AddOrder(newOrder);
 		}
 
 		public void Delete()

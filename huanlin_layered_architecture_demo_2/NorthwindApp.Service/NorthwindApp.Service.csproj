@@ -91,9 +91,9 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\NorthwindApp.DataAccess\NorthwindApp.DataAccess.csproj">
-      <Project>{1a044250-4542-497b-96c0-ac3f49a2d9ac}</Project>
-      <Name>NorthwindApp.DataAccess</Name>
+    <ProjectReference Include="..\NorthwindApp.BusinessLayer\NorthwindApp.BusinessLogic.csproj">
+      <Project>{334adc0c-5c41-49b7-89d5-2c0ae4ed6b80}</Project>
+      <Name>NorthwindApp.BusinessLogic</Name>
     </ProjectReference>
     <ProjectReference Include="..\NorthwindApp.Domain\NorthwindApp.Domain.csproj">
       <Project>{b029e529-53c2-464f-bdaa-7cdc183384fd}</Project>

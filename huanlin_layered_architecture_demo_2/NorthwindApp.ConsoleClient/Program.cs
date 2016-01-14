@@ -4,9 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-
-
 using NorthwindApp.Domain;
+using NorthwindApp.Domain.Model;
 using NorthwindApp.Service;
 
 namespace NorthwindApp.ConsoleClient
@@ -17,7 +16,7 @@ namespace NorthwindApp.ConsoleClient
 		{
 			OrderService orderService = new OrderService();
 			Order order = orderService.GetByID(1);
-			Console.WriteLine("Customer: " + order.CustomerID);
+            Console.WriteLine("Customer: " + order.CustomerID);
 			Console.WriteLine("ShipName: " + order.ShipName);
 			Console.WriteLine("OrderDat: " + order.OrderDate.ToString());
 

@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 using NorthwindApp.DataAccess;
 using NorthwindApp.Domain;
+using NorthwindApp.Domain.Model;
 
 namespace NorthwindApp.BusinessLogic
 {
@@ -23,6 +24,11 @@ namespace NorthwindApp.BusinessLogic
         public Order GetByID(int id)
         {
             return orderRepository.GetByID(id);
+        }
+
+        public void Insert(Order newOrder)
+        {
+            orderRepository.Insert(newOrder);
         }
 
         public IEnumerable<Order> GetOrders()
